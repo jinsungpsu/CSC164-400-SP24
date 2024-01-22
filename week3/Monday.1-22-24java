@@ -1,0 +1,93 @@
+import com.sun.security.jgss.GSSUtil;
+
+import java.util.Scanner;
+
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+public class Main {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+
+        // java, unlike c++, allows us to create arrays during runtime using variable sizes
+        System.out.println("How big of an array shall I create, sir?");
+        int arrSize = keyboard.nextInt();
+        String[] words = new String[arrSize];
+
+        // if you find yourself typing this... probably use an array
+        int num1;
+        int num2;
+        int num3;
+
+        int[] nums = new int[3];                // MUST declare a size when creating arrays
+        int[] someOtherNums = {1,2,3};          // you can also initialize with some data, which will
+                                                // then have an implicit size...
+                                                // cannot use the initializer syntax later in the program, though
+
+        for (int i = 0; i < nums.length; i++) { // arrays in java have a length property you can use
+            nums[i] = keyboard.nextInt();       // assign a value from the keyboard to each array location
+            System.out.println(nums[i]);        // then print as we loop
+        }
+
+        /*
+        Practice problem during class on 1/22/24
+        
+        a person is trying to keep track of their balance...
+        ask for their pin number... do not go into the rest of
+        the application, until it is correct OR if they failed 5 times.... lock them out!
+        pin is 1234
+        ask the person for their checking balance
+        if it's less than 0... error... exit?  re prompt?  up to you
+
+        WE'LL RESUME LECTURE AT 2:30
+        System.exit(0) immediate kills the program.
+         */
+
+        final int CORRECT_PIN = 1234;
+        final int MAX_INCORRECT_ATTEMPTS = 5;
+
+        int pinEntered;
+        int incorrectCounter = 0;
+
+        // get user pin and validate
+        do {
+            System.out.println("Enter a pin: ");
+            pinEntered = keyboard.nextInt();
+
+            if (pinEntered != CORRECT_PIN) {
+                System.out.println("Wrong pin!");
+                incorrectCounter++;
+            }
+
+        } while (pinEntered != CORRECT_PIN && incorrectCounter < MAX_INCORRECT_ATTEMPTS);
+
+        // if the pin is correct.. go in here...
+        if (pinEntered == CORRECT_PIN) {
+            System.out.println("What is your balance? ");
+            double balance = keyboard.nextDouble();
+
+            if (balance < 0) {
+                System.out.println("Error!");
+            }
+        } else {
+            System.out.println("Don't try to hack this application.  It's awesome!");
+        }
+
+
+        /*
+        Short review of boolean expressions and modulo (%) operator
+         */
+        while(true) {
+            System.out.println("Enter a number: ");
+            int num = keyboard.nextInt();
+            boolean isEven = (num % 2 == 0);
+            if (isEven) {
+                // this is even
+                System.out.println(num + " is even.");
+            }
+            if(!isEven) {
+                // this is odd...
+                System.out.println(num + " is odd.");
+            }
+        }
+    }
+}
