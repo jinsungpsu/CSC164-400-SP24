@@ -1,0 +1,53 @@
+int[] arr = new arr[];  // error or nah?  ERROR - need size
+
+int[] arr2 = {1,2,3}; // error or nah?  NAH
+
+int a = 5;
+double b = 5.0;
+
+a = b;  // error or nah?  ERROR, overflow
+b = a;  // error or nah?  NAH
+
+// how can I fix line 8???
+// explicit casting
+a = (int) b;  // this works, no error
+
+
+// methods review
+// inputs - parameters
+// output - return type
+
+static void printMenu() {
+...
+}
+what are the input(s) to printMenu()??? NOTHING
+what are the outputs???  VOID = NOTHING
+
+// this is how I call this method:
+printMenu();
+
+static int sum(int n1, int n2) {
+...
+}
+sum(1,2); // this is NOT an error... but... a little weird
+System.out.print("The sum of 1 and 2 is: " + sum(1,2));
+int sumOfNums = sum(1,2);
+int sumOfThreeNums = sum(1,2) + 3;
+int sumOfMoreNums = sum(1, sum(2,3));
+int lastOneIPromise = sum(1, sum(2, sum(3,4))) + sum(5,6);
+
+// this example is just for fun
+// not on the exam #1!!!
+static Pokemon attack(Pokemon enemy, int round, boolean gameOver) {
+...
+}
+Pokemon p1 = new Pokemon();
+Pokemon pikachu = attack(p1, 2, false);
+battle(p1, attack(p1,2,false));
+
+static double blahblahblah (int[] scores, String name, char grade) {
+.... 
+}
+int[] arr = {1,2,3};
+System.out.print(blahblahblah(arr, "Alex", 'F'));
+double something = blahblahblah(arr, "Alex", 'A');
