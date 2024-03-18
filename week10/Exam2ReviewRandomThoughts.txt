@@ -1,0 +1,16 @@
+Cat[] cats = new Cat[5]; // create an array of ref vars
+cats[0] = new Cat();     // create a cat... and assign it to the first spot in the array of ref vars
+cats[0].setAge(5);		// this is fine...
+cats[1] = cats[0];		// maybe it's a copy of the first 
+
+
+cats[1].setAge(11);
+
+// 1 cat, 5 ref vars.. only 2 of them have a valid cat address stored in them
+// but both of them are pointing to the same cat...
+
+Drink d1 = new Drink();
+d1.setCalories(1000);
+Drink d2 = new Drink();
+d2.setCalories(d1.getCalories);
+d2.copy(d1);
