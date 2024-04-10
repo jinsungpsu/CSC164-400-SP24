@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.personalfinanceapp.ExpenseDetailsController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expense Details">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
+      <Text fx:id="expenseDetailsText" strokeType="OUTSIDE" strokeWidth="0.0" text="loading details..." />
+      <Button mnemonicParsing="false" onAction="#closeWindow" text="Close Window" />
+   </children>
+</VBox>
